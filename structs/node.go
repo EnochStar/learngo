@@ -31,10 +31,17 @@ func (node *TreeNode) SetByAddress(value int) {
 
 //调用函数的对象可以为nil
 func (node *TreeNode) Traverse() {
+	node.TraverseFunc(func(n *TreeNode) {
+		n.Print()
+	})
+	fmt.Println()
+}
+
+func (node *TreeNode) TraverseFunc(f func(*TreeNode)) {
 	if node == nil {
 		return
 	}
-	node.Left.Traverse()
-	node.Print()
-	node.Right.Traverse()
+	node.Left.TraverseFunc(f)
+	f(node)
+	node.Right.TraverseFunc(f)
 }
