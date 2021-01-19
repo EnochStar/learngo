@@ -4,6 +4,7 @@ import (
 	"fmt"
 )
 
+// 斐波那契数列
 func adder() func(int) int {
 	sum := 0
 	return func(i int) int {
