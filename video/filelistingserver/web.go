@@ -1,12 +1,15 @@
 package main
 
 import (
-	"learngo/filelistingserver/filelist"
+	"learngo/video/filelistingserver/filelist"
+	"log"
 	"net/http"
 	"os"
 )
 
 // 统一出错处理
+// 意料之中的使用error
+// 意料之外的使用panic
 type appHandler func(writer http.ResponseWriter,
 	request *http.Request) error
 
@@ -14,8 +17,18 @@ func errWrapper(
 	handler appHandler) func(http.ResponseWriter,
 	*http.Request) {
 	return func(writer http.ResponseWriter, request *http.Request) {
+		defer func() {
+			if r := recover(); r != nil {
+				log.Printf("Panic: %v", r)
+				http.Error(writer, http.StatusText(http.StatusInternalServerError), http.StatusInternalServerError)
+			}
+		}()
 		err := handler(writer, request)
 		if err != nil {
+			log.Printf("Error occured"+"handling request: %s", err.Error())
+			if userErr, ok := err.(userError); ok {
+				http.Error(writer, userErr.Message(), http.StatusBadRequest)
+			}
 			code := http.StatusOK
 			switch {
 			case os.IsNotExist(err):
@@ -29,8 +42,14 @@ func errWrapper(
 		}
 	}
 }
+
+type userError interface {
+	error
+	Message() string
+}
+
 func main() {
-	http.HandleFunc("/learngo/", errWrapper(filelist.Handler))
+	http.HandleFunc("/", errWrapper(filelist.Handler))
 	err := http.ListenAndServe(":8888", nil)
 	if err != nil {
 		panic(err)

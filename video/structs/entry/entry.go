@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"learngo/structs"
+	"learngo/video/structs"
 )
 
 //type myTreeNode struct {

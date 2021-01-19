@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"learngo/testing"
+	"learngo/video/testing"
 )
 
 func getRetriever() retriever {

@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"learngo/retriever/mock"
-	"learngo/retriever/real"
+	"learngo/video/retriever/mock"
+	"learngo/video/retriever/real"
 	"time"
 )
 
