@@ -3,12 +3,12 @@ package main
 import "fmt"
 
 func AssumeMap() {
-	scoreMap := make(map[string]int, 8)
-	scoreMap["小明"] = 10
-	scoreMap["张三"] = 19
-	fmt.Println(scoreMap)
-	fmt.Println(scoreMap["小明"])
-	fmt.Printf("type of a:%T\n", scoreMap)
+	ScoreMap := make(map[string]int, 8)
+	ScoreMap["小明"] = 10
+	ScoreMap["张三"] = 19
+	fmt.Println(ScoreMap)
+	fmt.Println(ScoreMap["小明"])
+	fmt.Printf("type of a:%T\n", ScoreMap)
 }
 func assumeMapAdvance() {
 	userInfo := map[string]string{
