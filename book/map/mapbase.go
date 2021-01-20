@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func assumeMap() {
+func AssumeMap() {
 	scoreMap := make(map[string]int, 8)
 	scoreMap["小明"] = 10
 	scoreMap["张三"] = 19
