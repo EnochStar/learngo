@@ -2,6 +2,8 @@ package main
 
 import "fmt"
 
+var ScoreMap map[string]string
+
 func AssumeMap() {
 	ScoreMap := make(map[string]int, 8)
 	ScoreMap["小明"] = 10
