@@ -1,10 +1,9 @@
 package main
 
-import (
-	"learngo/book/function/funcReturn"
-)
+import "learngo/book/function/anonymousFunction"
 
 func main() {
 	//funcParameter.FuncParameter()
-	funcReturn.FunctionDefer()
+	//funcReturn.FunctionDefer()
+	anonymousFunction.MoreAnonymous()
 }
