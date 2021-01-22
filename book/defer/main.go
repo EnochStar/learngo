@@ -1,9 +1,10 @@
 package main
 
-import (
-	"learngo/book/defer/deferBase"
-)
+import "learngo/book/defer/deferTrap"
 
 func main() {
-	deferBase.DeferDelay()
+	//deferTrap.DeferReturn()
+	//deferBase.DeferDelay()
+	//deferTrap.RunDeferNil()
+	deferTrap.Do()
 }
