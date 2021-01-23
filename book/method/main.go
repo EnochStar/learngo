@@ -1,9 +1,10 @@
 package main
 
-import "learngo/book/method/expression"
+import "learngo/book/method/errors"
 
 func main() {
 	//anonymousField.AnonymousField()
 	//methodSet.MethodSetS()
-	expression.Expression()
+	//expression.Expression()
+	errors.CustomizeError()
 }
