@@ -1,9 +1,8 @@
 package main
 
-import (
-	"learngo/book/method/anonymousField"
-)
+import "learngo/book/method/methodSet"
 
 func main() {
-	anonymousField.AnonymousField()
+	//anonymousField.AnonymousField()
+	methodSet.MethodSetS()
 }
