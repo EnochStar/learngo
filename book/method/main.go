@@ -1,8 +1,9 @@
 package main
 
-import "learngo/book/method/methodSet"
+import "learngo/book/method/expression"
 
 func main() {
 	//anonymousField.AnonymousField()
-	methodSet.MethodSetS()
+	//methodSet.MethodSetS()
+	expression.Expression()
 }
