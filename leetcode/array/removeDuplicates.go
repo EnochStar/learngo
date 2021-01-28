@@ -1,4 +1,4 @@
-package linkedList
+package array
 
 func removeDuplicates(nums []int) int {
 	if nums == nil || len(nums) == 0 {
