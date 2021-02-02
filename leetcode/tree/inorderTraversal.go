@@ -10,5 +10,6 @@ func inorderTraversal(root *TreeNode) (res []int) {
 		res = append(res, root.Val)
 		inorder(root.Right)
 	}
+	inorder(root)
 	return res
 }
